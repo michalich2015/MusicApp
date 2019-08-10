@@ -1,0 +1,311 @@
+// out: false
+
+.player {
+    padding-left: 175px;
+    background-color: #90adb1;
+
+    .playlist-toolbar {
+        background-color: #464646;
+        min-height: 60px ;
+        display: flex;
+        padding-left: 5%;
+        position: relative;
+
+
+        > div {
+            display: flex;
+            align-items: center;
+
+            
+        }
+        .btn-group:first-child {
+            margin-right: 20px;
+
+            span {
+                background: transparent;
+                border: none;
+                box-shadow: none;
+
+                &:hover {
+                    opacity: 0.70;
+                }
+            }
+            
+            .btn-rewind {
+                i {
+                    &:before {
+                        content: url('/media/image/icons/rewind.svg');
+                    }
+                }
+            }
+            .btn-pause {
+                i {
+                    
+                    width: 24px;
+                    height: 27px;
+                    &:before {
+                        content: url('/media/image/icons/pause.svg');
+                        
+                    }
+                }
+            }
+            .btn-play {
+                i {
+                    
+                    &:before {
+                        content: url('/media/image/icons/play.svg');
+                    }
+                }
+            }
+            .btn-fast-forward {
+                i {
+                    &:before {
+                        content: url('/media/image/icons/forward.svg');
+                    }
+                }
+            }
+        }
+
+        .cover {
+            position: relative;
+            width: 92px;
+            margin-right: 20px;
+
+            img {
+                position: absolute;
+                bottom: -10%;
+                width: 92px;
+                height: 80px;
+            }
+        }
+
+        .hamburger-menu {
+            position: relative;
+            margin-right: 20px;
+
+            #menu-toggle:checked ~ .menu-box {
+                visibility: visible;
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            #menu-toggle:checked ~ .hamburger-btn {
+                opacity: 0.85;
+            }
+
+            #menu-toggle {
+                display: none;
+            }
+            .hamburger-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 49px;
+                height: 49px;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+                border-radius: 5px;
+                background-color: #2e2e2e;
+                cursor: pointer;
+                margin: 0;
+
+                &:hover {
+                    opacity: 0.85;
+                }
+
+                .hamburger-icon {
+                    width: 19px;
+                    height: 19px;
+                    
+
+                    &:before{
+                        content: url(/media/image/icons/hamburger.svg);
+                    }
+                }
+            }
+            .menu-box {
+                position: absolute;
+                z-index: 101;
+                top: 110%;
+                left: 0;
+                min-width: max-content;
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+                border-radius: 4px;
+                background-color: #464646;
+                padding: 10px;
+                transform: translateY(-10px);
+                transition: all 0.1s ease;
+                opacity: 0;
+                visibility: hidden;
+
+                li {
+                    color: #cccccc;
+                    font-family: "OpenSans-Bold";
+                    font-size: 13px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    
+                    &:hover{
+                        opacity: 0.70;
+                    }
+                }
+            }
+        }
+
+        .track-info {
+            display: grid;
+            grid-template-rows: 1fr 1fr;
+            width: 301px;
+            max-width: max-content;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.13);
+            border-radius: 5px;
+            background-color: #2e2e2e;
+            padding: 0 5px 5px 10px;
+            margin: 5px;
+
+            div {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+
+
+                > * {
+                    display: grid;
+                    color: #cccccc;
+                    font-family: "OpenSans-Regular";
+                    font-size: 13px;
+                    font-weight: 400;
+                    justify-items: end;
+                    position: relative;
+                    margin: 5px 5px 0 0;
+                    min-width: max-content;
+
+
+                    &:before {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        content: attr(data-label);
+                        color: #676767;
+                        font-family: "OpenSans-Regular";
+                        font-size: 12px;
+                        font-weight: 400;
+
+                    }
+                }
+            }
+
+            .header .medium{
+                font-family: "OpenSans-Medium";
+            }
+
+            .footer {
+
+                span:first-child {
+                    justify-items: start;
+
+                    &:after {
+                        content: attr(data-label);
+                        position: absolute;
+                        right: 0;
+                        color: #676767;
+                        font-family: "OpenSans-Regular";
+                        font-size: 12px;
+                        font-weight: 400;
+                    }
+                    &:before {
+                        content: '';
+                    }
+                }
+            }
+        
+        }
+
+        div.volume {
+            display: flex;
+            height: 17px;
+            width: 17px;
+            position: relative;
+            align-self: center;
+            margin-left: auto;
+
+            &:hover {
+
+                .wrapper-range {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+
+            .volume-trigger {
+                position: absolute;
+                z-index: 103;
+                top: -3px;
+                left: 0;
+                padding: 5px;
+                border-radius: 14px 14px 0.5px 0.5px;
+                transition: all 0.1s linear;
+                cursor: pointer;
+
+                i {
+                    display: inline-block;
+                    height: 17px;
+                    width: 17px;
+
+                    &::before{
+                        content: url('/media/image/icons/volume.svg');
+                    }
+                }
+            }
+            .wrapper-range {
+                position: absolute;
+                left: -63px;
+                top: 310%;
+                z-index: 102;
+                width: 152px;
+                height: 27px;
+                border-radius: 14px;
+                background-color: #606060;
+                padding: 0 10px 0 42px;
+                visibility: hidden;
+                opacity: 0;
+                transition: all 0.1s linear;
+
+            }
+        }
+
+        .btn-close{
+            display: flex;
+            align-self: center ;
+            justify-content: center;
+            min-width: 49px;
+            min-height: 49px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+            border-radius: 5px;
+            background-color: #2e2e2e;
+            cursor: pointer;
+            margin: 0 10px 0 30px;
+            
+
+            &:hover {
+                opacity: 0.85;
+            }
+
+            i {
+                width: 19px;
+                height: 19px;
+
+                &:before{
+                    content: url(/media/image/icons/close.svg);
+                }
+            }
+        }
+
+        .zoom {
+            position: absolute;
+            z-index: 98;
+            top: 110%;
+            right: 20px;
+        }
+    }
+
+
+}

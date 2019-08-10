@@ -1,0 +1,101 @@
+// out: ../css/new.css
+@import 'fonts.less';
+@import 'input-range';
+@import 'player.less';
+@import 'playlist.less';
+
+
+@background-color: #2e2e2e;
+
+body{
+    background-color: #2E2E2E;
+}
+h1, h2, h3, h4, h5, p, span, li, option, div {
+    color: #cccccc;
+    list-style-type: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+
+}
+
+.disable-selection {
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
+}
+
+.vertical {
+    -webkit-transform:rotate(90deg); 
+    -moz-transform:rotate(90deg); 
+    -o-transform:rotate(90deg); 
+    -ms-transform:rotate(90deg); 
+    transform:rotate(90deg); 
+}
+
+.custom-select {
+    padding: 1px 2px;
+    background: #464646;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    font-family: inherit;
+    font-size: 13px;
+    color: #cccccc;
+
+}
+
+
+
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: @background-color;
+
+}
+
+// Zoom-in zoom-out 
+
+.btn-zoom-in, .btn-zoom-out{
+    border-radius: 5px;
+    border: none;
+    padding: 4px 4px 4px 6px;
+    width: 26px;
+    height: 26px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.14);
+    background-color: #464646;
+}
+.btn-zoom-in:hover,.btn-zoom-out:hover
+{
+    background-color:#464646;
+    border-color: #464646;
+}
+.btn-zoom-in:active,.btn-zoom-out:active
+{
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
+    opacity: 0.85;
+}
+.fa-search-plus,.fa-search-minus{
+    color: #d8d8d8;
+    &:hover {
+        opacity: 0.85;
+    }
+    font-size: 15px;
+}
+.btn-zoom-out{
+    margin-right:2px;
+}
+
+//Sound waves
+.waveform{
+    background-color: #2E2E2E;
+}
+
+//Playlist
